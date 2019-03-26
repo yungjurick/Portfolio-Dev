@@ -20,13 +20,19 @@
         <p class="main__title">YUNG JU RICK KIM</p>
         <p class="main__subtitle">ANYTHING TO DO WITH PROGRAMMING</p>
         <div class="main-middle-bottom-sns-container">
-          <img src="../assets/linkedin-logo.svg" alt="linkedIn">
-          <img src="../assets/facebook-logo.svg" alt="facebook">
-          <img src="../assets/github-logo.svg" alt="github">
+          <a href="https://www.linkedin.com/in/yungjurick/">
+            <img src="../assets/linkedin-logo.svg" alt="linkedIn">
+          </a>
+          <a href="https://www.facebook.com/yungju.r.kim">
+            <img src="../assets/facebook-logo.svg" alt="facebook">
+          </a>
+          <a href="https://github.com/yungjurick/">
+            <img src="../assets/github-logo.svg" alt="github">
+          </a>
         </div>
       </div>
     </div>
-    <button class="main-right navigation-btn">
+    <button class="main-right navigation-btn" @click="navigateTo('projects')">
       <span>P</span>
       <span>R</span>
       <span>O</span>
@@ -47,6 +53,7 @@ export default {
       this.$router.push({
         path: `/${param}`
       })
+      this.$nuxt.$loading.start()
     }
   }
 }
@@ -56,7 +63,6 @@ export default {
 @import '../assets/themes.scss';
 .main-container {
   font-family: $main_font;
-  font-weight: 700;
   font-size: 32px;
   color: white;
   min-height: 100vh;
@@ -65,10 +71,10 @@ export default {
   align-items: center;
   text-align: center;
   .navigation-btn {
+    font-family: $main_font;
     width: 32px;
     height: auto;
     color: white;
-    font-weight: 700;
     font-size: 24px;
     background-color: transparent;
     border-color: transparent;
@@ -79,14 +85,14 @@ export default {
     cursor: pointer;
   }
   .main-left {
-    margin-right: $unit_width * 440;
+    margin-right: $unit_width * 160;
     transition: 0.5s;
     &:hover {
       background-color: $main_red;
     }
   }
   .main-right {
-    margin-left: $unit_width * 440;
+    margin-left: $unit_width * 160;
     transition: 0.5s;
     &:hover {
       background-color: $main_blue;
@@ -97,6 +103,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 70vw;
     height: 100vh;
     .main-middle-top {
       margin-top: $unit_height * 253;
@@ -128,11 +135,13 @@ export default {
       }
       .main-middle-bottom-sns-container {
         margin-top: $unit_height * 58;
-        img {
-          height: $unit_height * 60;
+        a {
           cursor: pointer;
+          img {
+            height: $unit_height * 60;
+          }
         }
-        img + img {
+        a + a {
           margin-left: 71px;
         }
       }

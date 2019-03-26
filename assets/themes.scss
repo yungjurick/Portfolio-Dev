@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+@font-face {
+  font-family: BMDoHyeon;
+  src: url(../static/BMDOHYEON_otf.otf), url(../static/BMDOHYEON_ttf.ttf);
+}
 
 $main_red: #fa3c4c;
 $main_blue: #0084ff;
 
-$main_font: 'Lato', sans-serif;
+$main_font: 'BMDoHyeon';
+$secondary_font: 'Karla', sans-serif;
 $unit_height: 100vh / 1024;
 $unit_width: 100vw / 1440;

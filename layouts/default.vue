@@ -1,8 +1,10 @@
 <template>
-  <div class="main-layout">
-    <div class="main-bg"/>
-    <nuxt class="main-view"/>
-  </div>
+  <transition name="layout" mode="out-in">
+    <div class="main-layout">
+      <div class="main-bg"/>
+      <nuxt class="main-view"/>
+    </div>
+  </transition>
 </template>
 
 <style lang="scss">

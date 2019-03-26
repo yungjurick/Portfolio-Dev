@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <nuxt/>
-  </div>
+  <section>
+    <transition name="layout" mode="out-in">
+      <nuxt/>
+    </transition>
+  </section>
 </template>
 
 <style lang="scss">
